@@ -1,15 +1,15 @@
 package builder
 
 import (
-	. "github.com/qct/crypto_coin_api"
-	"github.com/qct/crypto_coin_api/chbtc"
-	"github.com/qct/crypto_coin_api/coincheck"
+	. "github.com/oiovoyo/crypto_coin_api"
+	"github.com/oiovoyo/crypto_coin_api/chbtc"
+	"github.com/oiovoyo/crypto_coin_api/coincheck"
 	"context"
-	"github.com/qct/crypto_coin_api/huobi"
-	"github.com/qct/crypto_coin_api/okcoin"
-	"github.com/qct/crypto_coin_api/poloniex"
-	"github.com/qct/crypto_coin_api/yunbi"
-	"github.com/qct/crypto_coin_api/zaif"
+	"github.com/oiovoyo/crypto_coin_api/huobi"
+	"github.com/oiovoyo/crypto_coin_api/okcoin"
+	"github.com/oiovoyo/crypto_coin_api/poloniex"
+	"github.com/oiovoyo/crypto_coin_api/yunbi"
+	"github.com/oiovoyo/crypto_coin_api/zaif"
 	"github.com/qiniu/log"
 	"net"
 	"net/http"

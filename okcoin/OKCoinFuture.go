@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	. "github.com/qct/crypto_coin_api"
+	. "github.com/oiovoyo/crypto_coin_api"
 	"strconv"
 	"net/url"
 	"strings"
