@@ -104,15 +104,15 @@ func New(client *http.Client, accessKey, secretKey string) *Poloniex {
 func (poloniex *Poloniex) GetExchangeName() string {
     return EXCHANGE_NAME
 }
-func (poloniex *Poloniex)GetTickers() ([]Ticker, error) {
+func (poloniex *Poloniex)GetTickers() (map[string]Ticker, error) {
     respmap, err := HttpGet(poloniex.client, PUBLIC_URL+TICKER_API)
     if err != nil {
         log.Println(err)
         return nil, err
     }
 
-    tickers := make([]Ticker,0)
-    for _, v := range respmap {
+    tickers := make(map[string]Ticker)
+    for k, v := range respmap {
         tickermap := v.(map[string]interface{})
 
         ticker := new(Ticker)
@@ -122,7 +122,7 @@ func (poloniex *Poloniex)GetTickers() ([]Ticker, error) {
         ticker.Buy, _ = strconv.ParseFloat(tickermap["highestBid"].(string), 64)
         ticker.Sell, _ = strconv.ParseFloat(tickermap["lowestAsk"].(string), 64)
         ticker.Vol, _ = strconv.ParseFloat(tickermap["quoteVolume"].(string), 64)
-        tickers = append(tickers,*ticker)
+        tickers[k] = *ticker
     }
 
 
